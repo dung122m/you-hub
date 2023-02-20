@@ -46,9 +46,6 @@ const LeftNav = () => {
           );
         })}
         <hr className="my-5 border-white/[0.2]" />
-        <div className="text-orange-400 text-[16px] text-center">
-          Clone by Dung Tran
-        </div>
       </div>
     </div>
   );
