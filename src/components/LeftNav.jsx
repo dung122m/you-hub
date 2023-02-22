@@ -45,7 +45,18 @@ const LeftNav = () => {
             </React.Fragment>
           );
         })}
+
         <hr className="my-5 border-white/[0.2]" />
+        <span className="text-orange-500 text-center">
+          Clone by <span> </span>
+          <a
+            className="text-white "
+            href="https://facebook.com/dung.tran122"
+            target="_blank"
+          >
+            Dung Tran
+          </a>
+        </span>
       </div>
     </div>
   );

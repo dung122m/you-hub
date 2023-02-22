@@ -21,7 +21,7 @@ const VideoDetails = () => {
   const fetchVideoDetails = () => {
     setLoading(true);
     fetchDataFromApi(`video/details/?id=${id}`).then((res) => {
-      console.log(res);
+      //console.log(res);
       setVideo(res);
       setLoading(false);
     });
@@ -37,7 +37,7 @@ const VideoDetails = () => {
   return (
     <div className="flex justify-center flex-row h-[calc(100%-56px)] bg-black">
       <div className="w-full max-w-[1280px] flex flex-col lg:flex-row">
-        <div className="flex flex-col lg:w-[calc(100%-350px)] xl:w-[calc(100%-400px)] px-4 py-3 lg:py-6 overflow-y-auto">
+        <div className="flex flex-col lg:w-[calc(100%-350px)] overflow-hidden xl:w-[calc(100%-400px)] px-4 py-3 lg:py-6 overflow-y-auto">
           <div className="h-[200px] md:h-[400px] lg:h-[400px] xl:h-[550px] ml-[-16px] lg:mr-0">
             <ReactPlayer
               url={`https:/www.youtube.com/watch?v=${id}`}
@@ -106,7 +106,8 @@ const VideoDetails = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col py-6 px-4 overflow-y-auto lg:w-[350px] xl:[400px]">
+
+        <div className="flex flex-col py-6 px-4 scrollbar-hide overflow-y-auto lg:w-[350px] xl:[400px]">
           {relatedVideos?.contents?.map((item, index) => {
             if (item.type !== "video") return false;
             return <SuggestionVideoCard key={index} video={item?.video} />;
